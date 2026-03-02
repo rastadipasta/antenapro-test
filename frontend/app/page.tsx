@@ -659,7 +659,7 @@ export default function Home() {
                     <div className="contact-item-icon"><IconClock /></div>
                     <div>
                       <h4>Radno vrijeme</h4>
-                      <p>Pon – Pet: 08:00 – 18:00<br />Sub: 08:00 – 12:00</p>
+                      <div style={{ color: "var(--text-muted)" }}>Pon – Pet: 08:00 – 18:00<br />Sub: 08:00 – 12:00</div>
                     </div>
                   </div>
                 </div>
