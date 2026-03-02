@@ -128,6 +128,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [viewerOpen, setViewerOpen] = useState(false);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
@@ -229,6 +230,7 @@ export default function Home() {
   };
 
   useEffect(() => {
+    setMounted(true);
     const saved = localStorage.getItem("antenapro-theme");
     if (saved === "dark") {
       setDark(true);
@@ -355,9 +357,9 @@ export default function Home() {
         <div className="navbar-inner">
           <a href="#" className="logo">
             <img
-              src={dark
-                ? "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697520c6883eb7a00da19089/3748cde97_Project-20260213052716.png"
-                : "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697520c6883eb7a00da19089/232f6d830_bijela20260213053723.png"
+              src={!mounted || !dark
+                ? "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697520c6883eb7a00da19089/232f6d830_bijela20260213053723.png"
+                : "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697520c6883eb7a00da19089/3748cde97_Project-20260213052716.png"
               }
               alt="AntenaPro logo"
             />
@@ -371,7 +373,7 @@ export default function Home() {
           </ul>
           <div className="nav-right">
             <button className="theme-btn" onClick={toggleTheme} aria-label="Promijeni temu">
-              {dark ? <IconSun /> : <IconMoon />}
+              {mounted && dark ? <IconSun /> : <IconMoon />}
             </button>
             <button className="hamburger" onClick={() => setMenuOpen((m) => !m)} aria-label="Izbornik">
               {menuOpen ? <IconX /> : <IconMenu />}
