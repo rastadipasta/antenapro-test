@@ -3,6 +3,24 @@
 import { useState, useEffect, FormEvent, useCallback, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
+// Client-only wrapper for ReCAPTCHA to avoid SSR hydration mismatches
+const ClientRecaptcha = ({ recaptchaRef }: { recaptchaRef: any }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return <div style={{ minHeight: "78px" }} />;
+
+  return (
+    <ReCAPTCHA
+      ref={recaptchaRef}
+      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+    />
+  );
+};
+
 // SVG Icons
 const IconAntenna = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -130,7 +148,7 @@ export default function Home() {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<any>(null);
 
   const [formState, setFormState] = useState({
     ime: "", prezime: "", email: "", telefon: "", poruka: ""
@@ -696,10 +714,7 @@ export default function Home() {
                         <textarea id="poruka" name="poruka" required placeholder="Opišite vaš zahtjev..." value={formState.poruka} onChange={handleChange} suppressHydrationWarning />
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem', marginTop: '0.5rem' }}>
-                        <ReCAPTCHA
-                          ref={recaptchaRef}
-                          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                        />
+                        <ClientRecaptcha recaptchaRef={recaptchaRef} />
                       </div>
                       <button type="submit" className="form-submit" disabled={sending}>
                         {sending ? "Slanje..." : <><IconSend /> Pošalji poruku</>}
