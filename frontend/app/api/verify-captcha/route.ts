@@ -25,8 +25,8 @@ export async function POST(req: NextRequest) {
 
         const data = await response.json();
 
-        if (data.success && data.score >= 0.5) {
-            return NextResponse.json({ success: true, score: data.score });
+        if (data.success) {
+            return NextResponse.json({ success: true });
         } else {
             console.error("reCAPTCHA failed:", data);
             return NextResponse.json({ success: false, error: "reCAPTCHA verification failed" }, { status: 400 });
