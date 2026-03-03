@@ -447,7 +447,7 @@ export default function Home() {
               {[
                 { icon: <IconAntenna />, title: "Montaža antena", desc: "Profesionalna ugradnja zemaljskih i satelitskih antenskih sustava za savršen signal." },
                 { icon: <IconCamera />, title: "Videonadzor i alarmi", desc: "Kompletna sigurnosna rješenja za vaš dom ili poslovni prostor." },
-                { icon: <IconWifi />, title: "Internet i Wi-Fi", desc: "Montaža optike, interneta, Wi-Fi mreža i 5G povezivosti." },
+                { icon: <IconWifi />, title: "Internet i Wi-Fi", desc: "Montaža optike, Starlink interneta, Wi-Fi mreža i 5G povezivosti." },
                 { icon: <IconTV />, title: "Montaža televizora", desc: "Profesionalno postavljanje TV-a na zid s provlačenjem kablova." },
                 { icon: <IconPlayCircle />, title: "EON TV podrška", desc: "Tehnička podrška za Telemach EON TV platformu." },
                 { icon: <IconSupport />, title: "A1 podrška", desc: "Ovlašteni zastupnik za A1 tehničku podršku i usluge." },
