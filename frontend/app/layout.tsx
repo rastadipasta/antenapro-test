@@ -16,6 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://antenapro.hr"),
   title: "AntenaPro - Profesionalna montaža antena, videonadzora i internet rješenja | Hrvatska",
   description:
     "Stručna montaža zemaljskih i satelitskih antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Ovlašteni A1 i Telemach partner. Brzi odaziv 24h.",
