@@ -793,7 +793,7 @@ export default function Home() {
                 </div>
               </div>
               <a
-                href="https://share.google/CZn9JYVmbczT9hI78"
+                href="https://share.google/7CFGJbOQOT4qls5tp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="review-btn"
