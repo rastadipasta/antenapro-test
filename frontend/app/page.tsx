@@ -409,7 +409,16 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section className="hero reveal" id="hero">
-          <div className="hero-bg" style={{ backgroundImage: "url('/images/IMG_8108.JPG')", transform: "scaleX(-1)" }} />
+          <div className="hero-bg">
+            <Image
+              src="/images/IMG_8108.JPG"
+              alt="Montaža antena i videonadzora"
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: 'cover', filter: 'brightness(0.35)', transform: 'scaleX(-1)' }}
+            />
+          </div>
           <div className="hero-content">
             <div className="badge reveal reveal-delay-1">
               <span className="badge-dot" />
