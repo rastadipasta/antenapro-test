@@ -462,41 +462,54 @@ export default function Home() {
           </div>
         </section>
 
-        {/* WHY US */}
-        <section className="why-section" id="o-nama">
-          <div className="container">
+        {/* O NAMA */}
+        <section className="why-section" id="o-nama" style={{ padding: "5rem 0" }}>
+          <div className="container" style={{ maxWidth: "800px" }}>
             <div className="section-header">
-              <h2>Zašto odabrati <span style={{ color: "var(--accent)" }}>AntenaPro</span>?</h2>
-              <p>S više od 20 godina iskustva u industriji, pružamo vrhunske usluge montaže i servisa za sve vaše tehničke potrebe.</p>
+              <h2>O nama</h2>
             </div>
-            <div className="why-cards-grid">
-              <div className="why-card">
-                <div className="why-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <h3 className="why-card-title">Pouzdanost</h3>
-                <p className="why-card-desc">Kvalitetna i povoljna rješenja za sve vrste sustava. Iza svakog projekta stojimo 100%.</p>
-              </div>
-              <div className="why-card">
-                <div className="why-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-                  </svg>
-                </div>
-                <h3 className="why-card-title">Dostupnost</h3>
-                <p className="why-card-desc">Servisiramo domove, poslovne prostore, apartmane i hotele. Tu smo kad trebate, 24h podrška.</p>
-              </div>
-              <div className="why-card">
-                <div className="why-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-                  </svg>
-                </div>
-                <h3 className="why-card-title">Kvaliteta</h3>
-                <p className="why-card-desc">Vaši zahtjevi su nam na prvom mjestu. Radimo s povjerenjem i odgovornost je naš standard.</p>
-              </div>
+
+            <div className="about-content" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--text)", textAlign: "left" }}>
+              <p style={{ marginBottom: "1.5rem" }}>
+                <strong>AntenaPro</strong> je specijalizirana tvrtka za <strong>montažu i servis TV antena</strong>, <strong>satelitskih i zemaljskih sustava (DVB-T2)</strong>, te instalaciju modernih rješenja za <strong>internet</strong>, <strong>Wi-Fi mreže</strong> i <strong>Starlink sustave</strong>. Pružamo pouzdana tehnička rješenja za privatne i poslovne objekte, s naglaskom na kvalitetu izvedbe i dugoročnu stabilnost signala.
+              </p>
+
+              <p style={{ fontSize: "1.15rem", fontWeight: "600", marginBottom: "1rem" }}>Naše usluge uključuju:</p>
+
+              <ul style={{ listStyleType: "none", padding: "0", marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>montažu i podešavanje TV antena i satelitskih antena</strong></span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>montažu i konfiguraciju Starlink sustava</strong></span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>instalaciju optičkog interneta i Wi-Fi mreža</strong></span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>ugradnju videonadzora i alarmnih sustava</strong></span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>montažu televizora</strong> i multimedijskih sustava</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span><strong>servis antena</strong> i tehničko održavanje sustava</span>
+                </li>
+              </ul>
+
+              <p style={{ marginBottom: "1.5rem" }}>
+                Svaki projekt započinjemo stručnom procjenom lokacije kako bismo osigurali maksimalnu jačinu i stabilnost signala, sigurnost sustava i profesionalnu izvedbu instalacije.
+              </p>
+
+              <p style={{ marginBottom: "1rem" }}>
+                AntenaPro je pouzdan partner za <strong>antenske sustave</strong>, <strong>Starlink instalacije</strong>, <strong>videonadzor</strong> i internetsku infrastrukturu — rješenja koja osiguravaju stabilnu povezanost bez kompromisa.
+              </p>
             </div>
           </div>
         </section>
