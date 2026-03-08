@@ -466,7 +466,7 @@ export default function Home() {
         <section className="why-section" id="o-nama" style={{ padding: "5rem 0" }}>
           <div className="container" style={{ maxWidth: "800px" }}>
             <div className="section-header">
-              <h2>O nama</h2>
+              <h2>Zašto odabrati <span style={{ color: "var(--accent)" }}>AntenaPro</span>?</h2>
             </div>
 
             <div className="about-content" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--text)", textAlign: "left" }}>
