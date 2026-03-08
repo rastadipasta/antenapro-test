@@ -474,36 +474,36 @@ export default function Home() {
               <h2>Zašto odabrati <span style={{ color: "var(--accent)" }}>AntenaPro</span>?</h2>
             </div>
 
-            <div className="about-content" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--text)", textAlign: "left" }}>
+            <div className="about-content" style={{ lineHeight: "1.8", color: "var(--text)", textAlign: "left", padding: "0 1rem" }}>
               <p style={{ marginBottom: "1.5rem" }}>
                 <strong>AntenaPro</strong> je specijalizirana tvrtka za <strong>montažu i servis TV antena</strong>, <strong>satelitskih i zemaljskih sustava (DVB-T2)</strong>, te instalaciju modernih rješenja za <strong>internet</strong>, <strong>Wi-Fi mreže</strong> i <strong>Starlink sustave</strong>. Pružamo pouzdana tehnička rješenja za privatne i poslovne objekte, s naglaskom na kvalitetu izvedbe i dugoročnu stabilnost signala.
               </p>
 
-              <p style={{ fontSize: "1.15rem", fontWeight: "600", marginBottom: "1rem" }}>Naše usluge uključuju:</p>
+              <p style={{ fontWeight: "600", marginBottom: "1rem" }}>Naše usluge uključuju:</p>
 
               <ul style={{ listStyleType: "none", padding: "0", marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>montažu i podešavanje TV antena i satelitskih antena</strong></span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>montažu i konfiguraciju Starlink sustava</strong></span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>instalaciju optičkog interneta i Wi-Fi mreža</strong></span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>ugradnju videonadzora i alarmnih sustava</strong></span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>montažu televizora</strong> i multimedijskih sustava</span>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <span style={{ color: "var(--accent)", marginTop: "4px" }}><IconCheck /></span>
+                  <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <span><strong>servis antena</strong> i tehničko održavanje sustava</span>
                 </li>
               </ul>
