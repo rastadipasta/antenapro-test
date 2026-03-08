@@ -94,7 +94,7 @@ export default function RootLayout({
   return (
     <html lang="hr" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697520c6883eb7a00da19089/232f6d830_bijela20260213053723.png" sizes="any" />
       </head>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         {children}
