@@ -798,74 +798,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="review-btn"
               >
-                Ocijeni nas na Googleu
+                Ocijeni nas
               </a>
             </div>
 
-            <div className="reviews-slider-wrap">
-              <button
-                className="reviews-nav-btn reviews-nav-prev"
-                aria-label="Prethodna recenzija"
-                onClick={() => {
-                  const track = document.querySelector('[data-reviews-track]') as HTMLElement;
-                  if (track && track.firstElementChild) {
-                    const w = track.firstElementChild.getBoundingClientRect().width + 16;
-                    const idx = Math.round(track.scrollLeft / w);
-                    track.scrollTo({ left: (idx - 1) * w, behavior: 'smooth' });
-                  }
-                }}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
-              </button>
 
-              <div
-                data-reviews-track=""
-                className="reviews-track"
-              >
-                {[
-                  { name: "Krešo Marhunić", text: "", stars: 5, date: "Prije 10 sati" },
-                  { name: "Rasta DiPasta", text: "", stars: 5, date: "Prije jedan dan" },
-                  { name: "Emy Ciige", text: "Dečki su 'the best'.", stars: 5, date: "Prije 5 mj" },
-                  { name: "miro zagorac", text: "Ekipa je super", stars: 5, date: "Prije 5 mj" },
-                  { name: "Sonja Matković", text: "Super ekipa 🙂👍", stars: 5, date: "Prije 5 mj" },
-                  { name: "Marko Matković", text: "", stars: 5, date: "Prije 5 mj" },
-                  { name: "Zdenko Matković", text: "", stars: 5, date: "Prije 2 mjeseca" },
-                  { name: "Tihana Gorup", text: "", stars: 5, date: "Prije 2 godine" },
-                ].map((r, i) => (
-                  <div className="review-card" key={i}>
-                    <div className="review-card-header">
-                      <div className="review-avatar">
-                        {r.name.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="review-name">
-                          {r.name}
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
-                        </div>
-                        <div className="review-date">{r.date}</div>
-                      </div>
-                    </div>
-                    <div className="review-stars-small">{"★".repeat(r.stars)}{"☆".repeat(5 - r.stars)}</div>
-                    {r.text && <p className="review-text">{r.text}</p>}
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="reviews-nav-btn reviews-nav-next"
-                aria-label="Sljedeća recenzija"
-                onClick={() => {
-                  const track = document.querySelector('[data-reviews-track]') as HTMLElement;
-                  if (track && track.firstElementChild) {
-                    const w = track.firstElementChild.getBoundingClientRect().width + 16;
-                    const idx = Math.round(track.scrollLeft / w);
-                    track.scrollTo({ left: (idx + 1) * w, behavior: 'smooth' });
-                  }
-                }}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-              </button>
-            </div>
           </div>
         </section>
       </main>
