@@ -581,20 +581,20 @@ export default function Home() {
                 userSelect: "none",
                 cursor: "grab",
                 msOverflowStyle: "none",
+                scrollSnapType: "x mandatory",
               }}
             >
               {PROJECT_PHOTOS.map((p, i) => (
                 <div
                   key={i}
                   onClick={() => { setCurrentImgIndex(i); setViewerOpen(true); }}
+                  className="project-slider-item"
                   style={{
-                    flex: "0 0 calc(33.333% - 0.67rem)",
-                    minWidth: "280px",
-                    aspectRatio: "3 / 4",
                     borderRadius: "16px",
                     overflow: "hidden",
                     cursor: "pointer",
                     position: "relative",
+                    scrollSnapAlign: "center",
                   }}
                 >
                   <Image
@@ -621,7 +621,13 @@ export default function Home() {
                 aria-label="Prethodna slika"
                 onClick={() => {
                   const track = document.querySelector('[data-slider-track]') as HTMLElement;
-                  if (track) track.scrollBy({ left: -track.offsetWidth / 3, behavior: 'smooth' });
+                  if (track && track.firstElementChild) {
+                    const itemWidth = track.firstElementChild.getBoundingClientRect().width;
+                    const gap = 16;
+                    const snapWidth = itemWidth + gap;
+                    const currentIndex = Math.round(track.scrollLeft / snapWidth);
+                    track.scrollTo({ left: (currentIndex - 1) * snapWidth, behavior: 'smooth' });
+                  }
                 }}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
@@ -631,7 +637,13 @@ export default function Home() {
                 aria-label="Sljedeća slika"
                 onClick={() => {
                   const track = document.querySelector('[data-slider-track]') as HTMLElement;
-                  if (track) track.scrollBy({ left: track.offsetWidth / 3, behavior: 'smooth' });
+                  if (track && track.firstElementChild) {
+                    const itemWidth = track.firstElementChild.getBoundingClientRect().width;
+                    const gap = 16;
+                    const snapWidth = itemWidth + gap;
+                    const currentIndex = Math.round(track.scrollLeft / snapWidth);
+                    track.scrollTo({ left: (currentIndex + 1) * snapWidth, behavior: 'smooth' });
+                  }
                 }}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
