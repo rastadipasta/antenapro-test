@@ -793,7 +793,7 @@ export default function Home() {
                 </div>
               </div>
               <a
-                href="https://share.google/7CFGJbOQOT4qls5tp"
+                href="https://reviewthis.biz/antenapro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="review-btn"
