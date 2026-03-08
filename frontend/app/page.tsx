@@ -62,6 +62,11 @@ const IconClock = () => (
     <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
   </svg>
 );
+const IconMapPin = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+  </svg>
+);
 const IconCheck = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12" />
@@ -666,6 +671,13 @@ export default function Home() {
                     <div>
                       <h4>E-mail</h4>
                       <a href="mailto:info@antenapro.hr">info@antenapro.hr</a>
+                    </div>
+                  </div>
+                  <div className="contact-item">
+                    <div className="contact-item-icon"><IconMapPin /></div>
+                    <div>
+                      <h4>Adresa</h4>
+                      <p>Banatska ulica 38, 10040 Zagreb</p>
                     </div>
                   </div>
                   <div className="contact-item">
