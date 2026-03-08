@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://antenapro.hr"),
   title: "Montaža antena, videonadzora i interneta – AntenaPro Zagreb",
   description:
-    "Stručna montaža zemaljskih i satelitskih antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Ovlašteni A1 i Telemach partner. Brzi odaziv 24h.",
+    "Stručna montaža zemaljskih, satelitskih i starlink antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Brzi odaziv 24h.",
   keywords: [
     "montaža antena",
     "satelitske antene",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Montaža antena, videonadzora i interneta – AntenaPro Zagreb",
     description:
-      "Stručna montaža zemaljskih i satelitskih antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Ovlašteni A1 i Telemach partner.",
+      "Stručna montaža zemaljskih, satelitskih i starlink antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Brzi odaziv 24h.",
     type: "website",
     locale: "hr_HR",
     siteName: "AntenaPro",
