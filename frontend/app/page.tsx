@@ -643,7 +643,7 @@ export default function Home() {
         {/* CTA */}
         <section className="cta-section">
           <div className="container">
-            <h2>Spremni za bolji signal?</h2>
+            <h2>AntenaPro — rješenje za signal koje traje.</h2>
             <p>Nazovite nas i dobit ćete besplatnu procjenu za vaš projekt.</p>
             <a href="tel:+385993330036" className="btn-white">
               <IconPhone /> 099 333 0036
