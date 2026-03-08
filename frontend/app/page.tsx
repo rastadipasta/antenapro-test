@@ -141,11 +141,7 @@ const PROJECT_PHOTOS = [
   { src: "/projects/29.JPG", alt: "Završeni projekt montaže antene 29" },
 ];
 
-const IconArrowUp = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="18 15 12 9 6 15" />
-  </svg>
-);
+
 
 export default function Home() {
   const [dark, setDark] = useState(false);
@@ -163,8 +159,6 @@ export default function Home() {
   const [result, setResult] = useState<{ type: "success" | "error"; msg: string } | null>(null);
 
   // UX States
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
 
   const swipeRef = useRef({ startX: null as number | null, endX: null as number | null, isDragging: false, moved: false });
@@ -179,12 +173,7 @@ export default function Home() {
 
   // Scroll listeners & Intersection Observer for animations
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      setShowScrollTop(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Optional placeholder if future scroll logic is needed
   }, []);
 
   useEffect(() => {
@@ -350,7 +339,7 @@ export default function Home() {
     name: "AntenaPro",
     image: "/images/IMG_8108.JPG",
     description:
-      "Stručna montaža zemaljskih i satelitskih antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Ovlašteni A1 i Telemach partner.",
+      "Stručna montaža zemaljskih, satelitskih i starlink antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Brzi odaziv 24h.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "HR",
@@ -360,8 +349,8 @@ export default function Home() {
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
+      ratingValue: "4.8",
+      reviewCount: "15",
     },
     serviceArea: {
       "@type": "Country",

@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Montaža antena, videonadzora i interneta – AntenaPro Zagreb",
     description:
-      "Stručna montaža zemaljskih i satelitskih antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva.",
+      "Stručna montaža zemaljskih, satelitskih i starlink antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Brzi odaziv 24h.",
     images: ["/images/IMG_8108.JPG"],
   },
   alternates: {
