@@ -783,13 +783,13 @@ export default function Home() {
                   <span className="reviews-title">Reviews</span>
                 </div>
                 <div className="reviews-rating-row">
-                  <span className="reviews-rating-num">4.9</span>
+                  <span className="reviews-rating-num">4.8</span>
                   <div className="reviews-stars">
                     {"★★★★★".split("").map((s, i) => (
                       <span key={i} className={i < 5 ? "star-filled" : "star-empty"}>{s}</span>
                     ))}
                   </div>
-                  <span className="reviews-count">(200+)</span>
+                  <span className="reviews-count">(15)</span>
                 </div>
               </div>
               <a
@@ -798,7 +798,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="review-btn"
               >
-                Review us on Google
+                Ocijeni nas na Googleu
               </a>
             </div>
 
@@ -823,12 +823,14 @@ export default function Home() {
                 className="reviews-track"
               >
                 {[
-                  { name: "Marija K.", text: "Brza i profesionalna montaža antene. Sve je bilo gotovo u sat vremena, signal odličan. Preporučujem!", date: "Prije 2 tjedna" },
-                  { name: "Ivan P.", text: "Odlična usluga! Montirali su mi Starlink u rekordnom roku. Sve funkcionira besprijekorno, super komunikacija.", date: "Prije 3 tjedna" },
-                  { name: "Ana M.", text: "Postavljanje videonadzora za poslovni prostor. Profesionalan pristup, čist rad i fer cijena. Hvala!", date: "Prije mjesec dana" },
-                  { name: "Tomislav R.", text: "Već drugi put koristim njihove usluge. Ovaj put montaža TV-a na zid. Precizno, uredno, brzo. Top!", date: "Prije mjesec dana" },
-                  { name: "Petra S.", text: "Imali smo problem sa signalom godinama. AntenaPro riješio sve u jednom dolasku. Konačno savršena slika!", date: "Prije 2 mjeseca" },
-                  { name: "Davor B.", text: "Wi-Fi mreža za cijelu kuću, signal svugdje odličan. Vrlo ljubazni i stručni. Preporučam svima!", date: "Prije 2 mjeseca" },
+                  { name: "Krešo Marhunić", text: "", stars: 5, date: "Prije 10 sati" },
+                  { name: "Rasta DiPasta", text: "", stars: 5, date: "Prije jedan dan" },
+                  { name: "Emy Ciige", text: "Dečki su 'the best'.", stars: 5, date: "Prije 5 mj" },
+                  { name: "miro zagorac", text: "Ekipa je super", stars: 5, date: "Prije 5 mj" },
+                  { name: "Sonja Matković", text: "Super ekipa 🙂👍", stars: 5, date: "Prije 5 mj" },
+                  { name: "Marko Matković", text: "", stars: 5, date: "Prije 5 mj" },
+                  { name: "Zdenko Matković", text: "", stars: 5, date: "Prije 2 mjeseca" },
+                  { name: "Tihana Gorup", text: "", stars: 5, date: "Prije 2 godine" },
                 ].map((r, i) => (
                   <div className="review-card" key={i}>
                     <div className="review-card-header">
@@ -843,8 +845,8 @@ export default function Home() {
                         <div className="review-date">{r.date}</div>
                       </div>
                     </div>
-                    <div className="review-stars-small">★★★★★</div>
-                    <p className="review-text">{r.text}</p>
+                    <div className="review-stars-small">{"★".repeat(r.stars)}{"☆".repeat(5 - r.stars)}</div>
+                    {r.text && <p className="review-text">{r.text}</p>}
                   </div>
                 ))}
               </div>
