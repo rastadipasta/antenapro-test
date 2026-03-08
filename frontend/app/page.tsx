@@ -209,9 +209,17 @@ export default function Home() {
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setViewerOpen(false);
-      else if (e.key === "ArrowLeft") prevImage();
-      else if (e.key === "ArrowRight") nextImage();
+      if (e.key === "Escape") {
+        setViewerOpen(false);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        e.stopPropagation();
+        prevImage();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        e.stopPropagation();
+        nextImage();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => {
