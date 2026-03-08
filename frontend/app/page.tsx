@@ -677,7 +677,7 @@ export default function Home() {
                     <div className="contact-item-icon"><IconMapPin /></div>
                     <div>
                       <h4>Adresa</h4>
-                      <p>Banatska ulica 38, 10040 Zagreb</p>
+                      <a href="https://maps.google.com/?q=Banatska+ulica+38,+Zagreb" target="_blank" rel="noopener noreferrer">Banatska ulica 38, Zagreb</a>
                     </div>
                   </div>
                   <div className="contact-item">
