@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, FormEvent, useCallback, useRef } from "react";
+import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
 // Client-only wrapper for ReCAPTCHA to avoid SSR hydration mismatches
@@ -596,21 +597,20 @@ export default function Home() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.src}
                     alt={p.alt}
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     draggable={false}
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       transition: "transform 0.4s ease",
                       pointerEvents: "none",
                       display: "block",
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                    onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    onMouseOver={(e: React.MouseEvent<HTMLImageElement>) => (e.currentTarget.style.transform = "scale(1.05)")}
+                    onMouseOut={(e: React.MouseEvent<HTMLImageElement>) => (e.currentTarget.style.transform = "scale(1)")}
                   />
                 </div>
               ))}
