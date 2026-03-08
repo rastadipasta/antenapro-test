@@ -419,7 +419,7 @@ export default function Home() {
             <p className="reveal reveal-delay-2">Profesionalna montaža i servis antena, videonadzora, alarma i internet rješenja. Brzo, pouzdano, povoljno.</p>
             <div className="hero-buttons reveal reveal-delay-3">
               <a href="tel:+385993330036" className="btn-primary">
-                <IconPhone /> Nazovite odmah
+                <IconPhone /> 099 333 0036
               </a>
               <a href="#usluge" className="btn-secondary">
                 Naše usluge <IconArrowRight />
