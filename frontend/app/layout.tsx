@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     "Stručna montaža zemaljskih, satelitskih i starlink antena, videonadzora, alarma, internet i Wi-Fi mreža. 20+ godina iskustva. Brzi odaziv 24h.",
   keywords: [
     "montaža antena",
+    "starlink",
+    "starlink montaža",
     "satelitske antene",
     "zemaljske antene",
     "videonadzor",
@@ -81,7 +83,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "HR",
-    "geo.placename": "Hrvatska",
+    "geo.placename": "Zagreb, Krapinsko-zagorska županija, Zadarska županija, Hrvatska",
     language: "Croatian",
   },
 };

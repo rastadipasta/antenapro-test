@@ -352,11 +352,25 @@ export default function Home() {
       ratingValue: "4.8",
       reviewCount: "15",
     },
-    serviceArea: {
-      "@type": "Country",
-      name: "Hrvatska",
-    },
-    areaServed: "HR",
+    serviceArea: [
+      {
+        "@type": "City",
+        name: "Zagreb"
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Krapinsko-zagorska županija"
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Zadarska županija"
+      },
+      {
+        "@type": "Country",
+        name: "Hrvatska"
+      }
+    ],
+    areaServed: ["Zagreb", "Krapinsko-zagorska županija", "Zadarska županija", "Hrvatska"],
     openingHours: "Mo-Sa 08:00-20:00",
     sameAs: [
       "https://www.facebook.com/antenaproshop/",
