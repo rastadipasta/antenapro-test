@@ -392,7 +392,10 @@ export default function Home() {
         <div className="navbar-inner">
           <a href="#" className="logo">
             <img
-              src="/images/logo.png"
+              src={!mounted || !dark
+                ? "/images/logo-white.png"
+                : "/images/logo.png"
+              }
               alt="AntenaPro logo"
             />
             AntenaPro
