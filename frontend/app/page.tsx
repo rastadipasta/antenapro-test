@@ -2,6 +2,7 @@
 
 import { useState, useEffect, FormEvent, useCallback, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
 
 // Client-only wrapper for ReCAPTCHA to avoid SSR hydration mismatches
@@ -875,6 +876,10 @@ export default function Home() {
           <a href="https://www.tiktok.com/@antenapro/" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.8, transition: "opacity 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.opacity = "1"} onMouseLeave={(e) => e.currentTarget.style.opacity = "0.8"}>
             <img src="/icons/tik-tok.png" alt="AntenaPro TikTok" className="social-icon" style={{ width: "32px", height: "32px", objectFit: "contain" }} />
           </a>
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", marginBottom: "1.5rem", fontSize: "0.9rem" }}>
+          <Link href="/politika-privatnosti" style={{ color: "var(--text-muted)", textDecoration: "none" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Politika privatnosti</Link>
+          <Link href="/pravila-o-kolacicima" style={{ color: "var(--text-muted)", textDecoration: "none" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Pravila o kolačićima</Link>
         </div>
         <p>© {new Date().getFullYear()} AntenaPro. Sva prava pridržana.</p>
       </footer>
