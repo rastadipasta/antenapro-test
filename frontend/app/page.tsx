@@ -603,14 +603,7 @@ export default function Home() {
                 Želite li besplatnu procjenu? Zatražite procjenu lokacije i ponudu — obično odgovaramo u roku 24 sata.
               </p>
 
-              <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "2.5rem", boxShadow: "var(--shadow)" }}>
-                <p style={{ marginBottom: "1rem" }}>
-                  <strong>Napomena o tehničkim detaljima:</strong> u specifikacijama navodimo kompatibilnost uređaja, preporučene modele i garancijske uvjete; prije početka radova potvrdit ćemo sve parametre i dogovoriti termin izvedbe.
-                </p>
-                <p style={{ marginBottom: "0" }}>
-                  Svaki projekt započinjemo detaljnom i stručno vođenom procjenom lokacije: koristimo mjerače signala, provjeravamo smjerove i prijelaze koji mogu utjecati na prijem, analiziramo prostor i postojeću infrastrukturu te po potrebi izmjerimo GPS koordinate za optimalno pozicioniranje opreme. Nakon toga predlažemo konkretno rješenje — izbor nosača, antene ili Starlink terminala, razvod kabela i pristupne točke — kako bi montaža bila izvedena profesionalno i s dugoročnom stabilnošću signala.
-                </p>
-              </div>
+
 
               <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Naša metodologija i garancija kvalitete</h3>
               <ol style={{ paddingLeft: "1.5rem", marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
