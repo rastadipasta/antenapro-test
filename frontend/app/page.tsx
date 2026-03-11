@@ -534,44 +534,116 @@ export default function Home() {
 
             <div className="about-content" style={{ lineHeight: "1.8", color: "var(--text)", textAlign: "left", padding: "0 1rem" }}>
               <p style={{ marginBottom: "1.5rem" }}>
-                <strong>AntenaPro</strong> je specijalizirana tvrtka za <strong>montažu i servis TV antena</strong>, <strong>satelitskih i zemaljskih sustava (DVB-T2)</strong>, te instalaciju modernih rješenja za <strong>internet</strong>, <strong>Wi-Fi mreže</strong> i <strong>Starlink sustave</strong>. Pružamo pouzdana tehnička rješenja za privatne i poslovne objekte, s naglaskom na kvalitetu izvedbe i dugoročnu stabilnost signala.
+                <strong>AntenaPro</strong> je specijalizirana tvrtka za montažu i servis TV antena, satelitskih i zemaljskih sustava (DVB-T2) te za instalaciju modernih rješenja za internet, Wi-Fi mreže i Starlink sustave. Pružamo pouzdana tehnička rješenja za privatne i poslovne objekte, s naglaskom na kvalitetu izvedbe i dugoročnu stabilnost signala — od prvog mjerenja do konačne optimizacije.
               </p>
 
-              <p style={{ fontWeight: "600", marginBottom: "1rem" }}>Naše usluge uključuju:</p>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Naše ključne usluge</h3>
+              <p style={{ marginBottom: "1.5rem" }}>
+                Sve usluge izvodimo stručno i s jasnim ciljem: stabilna povezanost i zadovoljan korisnik.
+              </p>
 
-              <ul style={{ listStyleType: "none", padding: "0", marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+              <ul style={{ listStyleType: "none", padding: "0", marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>montažu i podešavanje TV antena i satelitskih antena</strong></span>
+                  <div>
+                    <strong>Montaža i podešavanje TV i satelitskih antena</strong><br/>
+                    Obuhvaća izbor optimalnog mjesta, montažu nosača, usmjeravanje antene i mjerenje snage signala (DVB-T2). Nakon montaže vršimo finalno podešavanje kako bi prijem bio stabilan i bez smetnji — obično odmah vidljivo u prvih nekoliko minuta testiranja.
+                  </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>montažu i konfiguraciju Starlink sustava</strong></span>
+                  <div>
+                    <strong>Montaža i konfiguracija Starlink sustava</strong><br/>
+                    Instaliramo i konfiguriramo Starlink terminale (suglasno modelu) s pravilnim pozicioniranjem i zaštitom kabela. U većini instalacija optimiziramo položaj kako bi uređaj imao liniju vidljivosti i minimalne prijelaze signala – rezultat je stabilna veza i brzine koje odgovaraju vašim potrebama.
+                  </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>instalaciju optičkog interneta i Wi-Fi mreža</strong></span>
+                  <div>
+                    <strong>Instalacija optičkog interneta i Wi-Fi mreža</strong><br/>
+                    Radimo FTTH/GPON priključke, urednu distribuciju kabela, te projektiramo Wi-Fi mreže prema prostoru — uključujući mjerenje signala, postavljanje pristupnih točaka i optimizaciju pokrivenosti. Cilj je pokriti cijeli prostor bez mrtvih zona i osigurati stabilno vrijeme rada mreže.
+                  </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>ugradnju videonadzora i alarmnih sustava</strong></span>
+                  <div>
+                    <strong>Ugradnja videonadzora i alarmnih sustava</strong><br/>
+                    Projektiramo sustave videonadzora prema zahtjevu: izbor kamera, raspored kadrova, pohrana snimljenog materijala i povezivanje s mrežnim sustavima. Dajemo preporuke za kamere i konfiguraciju tako da sustav pruži jasan doživljaj i potrebno pokrivanje prostora.
+                  </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>montažu televizora</strong> i multimedijskih sustava</span>
+                  <div>
+                    <strong>Montaža televizora i multimedijskih sustava</strong><br/>
+                    Postavljamo TV-e na zidne nosače, skrivamo kabele, spajamo audio/video opremu i kalibriramo sustav za optimalan efekt slike i zvuka. Nudimo rješenja za jednostavne postavke pa do kompleksnih multimedijskih sustava za poslovne prostore.
+                  </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
-                  <span><strong>servis antena</strong> i tehničko održavanje sustava</span>
+                  <div>
+                    <strong>Servis antena i tehničko održavanje</strong><br/>
+                    Pružamo brzi servis antena, popravke i redovno održavanje sustava kako bi emisija signala ostala u optimalnom stanju. Nudimo planove održavanja i hitne intervencije — na raspolaganju za provjere i optimizacije u realnom vremenu.
+                  </div>
                 </li>
               </ul>
 
-              <p style={{ marginBottom: "1.5rem" }}>
-                Svaki projekt započinjemo stručnom procjenom lokacije kako bismo osigurali maksimalnu jačinu i stabilnost signala, sigurnost sustava i profesionalnu izvedbu instalacije.
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Zašto odabrati nas</h3>
+              <p style={{ marginBottom: "2.5rem" }}>
+                Naša metoda počinje stručnom procjenom lokacije i mjerenjem uvjeta prijema — nakon toga predlažemo rješenje, instaliramo opremu i testiramo sustav u praksi. Time izbjegavamo nepotrebne prijelaze signala i rizik od slabe pokrivenosti; proces je prilagođen tako da klijent dobije funkcionalan sustav bez dodatnih komplikacija.
               </p>
 
-              <p style={{ marginBottom: "1rem" }}>
-                AntenaPro je pouzdan partner za <strong>antenske sustave</strong>, <strong>Starlink instalacije</strong>, <strong>videonadzor</strong> i internetsku infrastrukturu — rješenja koja osiguravaju stabilnu povezanost bez kompromisa.
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Primjeri izvedenih projekata</h3>
+              <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem", marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <li><strong>Obiteljska kuća (priobalno područje):</strong> zamjena stare antene i montaža novog sustava za stabilan DVB-T2 prijem; rezultat: eliminirani prekidi i poboljšana slika.</li>
+                <li><strong>Farma u izoliranom području:</strong> instalacija Starlink sustava i Wi-Fi distribucije za poslovanje; nakon toga zaposlenici su dobili brz i pouzdan pristup internetu u realnom vremenu.</li>
+                <li><strong>Poslovni ured:</strong> projektiranje i izvedba multimedijskog sustava s videonadzorom i optičkim priključkom — bolja pokrivenost i sigurnost prostora.</li>
+              </ul>
+
+              <p style={{ marginBottom: "2.5rem", fontWeight: 600, color: "var(--accent)" }}>
+                Želite li besplatnu procjenu? Zatražite procjenu lokacije i ponudu — obično odgovaramo u roku 24 sata.
+              </p>
+
+              <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "2.5rem", boxShadow: "var(--shadow)" }}>
+                <p style={{ marginBottom: "1rem" }}>
+                  <strong>Napomena o tehničkim detaljima:</strong> u specifikacijama navodimo kompatibilnost uređaja, preporučene modele i garancijske uvjete; prije početka radova potvrdit ćemo sve parametre i dogovoriti termin izvedbe.
+                </p>
+                <p style={{ marginBottom: "0" }}>
+                  Svaki projekt započinjemo detaljnom i stručno vođenom procjenom lokacije: koristimo mjerače signala, provjeravamo smjerove i prijelaze koji mogu utjecati na prijem, analiziramo prostor i postojeću infrastrukturu te po potrebi izmjerimo GPS koordinate za optimalno pozicioniranje opreme. Nakon toga predlažemo konkretno rješenje — izbor nosača, antene ili Starlink terminala, razvod kabela i pristupne točke — kako bi montaža bila izvedena profesionalno i s dugoročnom stabilnošću signala.
+                </p>
+              </div>
+
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Naša metodologija i garancija kvalitete</h3>
+              <ol style={{ paddingLeft: "1.5rem", marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <li><strong>Procjena lokacije:</strong> brz pregled i detalna analiza (vrijeme procjene ovisi o kompleksnosti) kako bismo identificirali potencijalne probleme prijema i optimalne točke montaže.</li>
+                <li><strong>Izbor opreme:</strong> preporučujemo modele i konfiguracije prilagođene vašem prostoru — od DVB-T2 antena do Starlink i optičkih priključaka — uz objašnjenje zašto je ta montaža najbolja za vaše potrebe.</li>
+                <li><strong>Instalacija i montaža:</strong> izvedba prema standardima, uz minimalne intervencije u prostoru (skrivanje kabela, sigurna montaža), te optimizaciju položaja za najbolji signal i kvalitetu slike.</li>
+                <li><strong>Testiranje i isporuka:</strong> nakon montaže provodimo testove prijema, mjerenje brzine interneta i inspekciju videonadzora; tek kad su svi parametri zadovoljeni, sustav predajemo korisniku.</li>
+                <li><strong>Servis i održavanje:</strong> nudimo redovne provjere, hitne intervencije i planove održavanja kako bi montaže ostale pouzdane i funkcionalne ili više godina.</li>
+              </ol>
+
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>Povjerenje i transparentnost</h3>
+              <p style={{ marginBottom: "2.5rem" }}>
+                AntenaPro je pouzdan partner za antenske sustave, Starlink instalacije, videonadzor i internetsku infrastrukturu — rješenja koja osiguravaju stabilnu povezanost bez kompromisa. Prije početka radova dobivate pisanu ponudu s opisom montaže, procjenom vremena izvedbe i informacijom o garanciji, sve tehničke specifikacije potvrđujemo s vama kako bi očekivanja bila jasna.
+              </p>
+
+              <div style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem" }}>
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "1rem", color: "var(--text)" }}>Česta pitanja (kratko)</h3>
+                <div style={{ marginBottom: "1rem" }}>
+                  <strong>Je li procjena besplatna?</strong><br/>
+                  U većini slučajeva nudimo besplatnu inicijalnu procjenu.
+                </div>
+                <div style={{ marginBottom: "1rem" }}>
+                  <strong>Koliko traje montaža?</strong><br/>
+                  Jednostavne montaže obično su gotove isti dan, kompleksniji sustavi ili cijeli projekti mogu zahtijevati 1 ili više radnih dana, ovisno o opsegu.
+                </div>
+                <div>
+                  <strong>Što uključuje garancija?</strong><br/>
+                  Garancija obuhvaća radove i instalirane komponente prema uvjetima proizvođača.
+                </div>
+              </div>
+
+              <p style={{ marginBottom: "0", fontWeight: 600 }}>
+                <a href="#kontakt" style={{ color: "var(--accent)", textDecoration: "none" }}>Želite li da izvršimo procjenu vaše lokacije?</a> Zatražite procjenu i ponudu — odgovor obično dobivate u roku 24 sata. Za hitne intervencije možemo ponuditi uslugu u najkraćem mogućem vremenu unutar područja naše pokrivenosti.
               </p>
             </div>
           </div>
