@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "../components/CookieBanner";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -98,6 +99,7 @@ export default function RootLayout({
     <html lang="hr" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         <CookieBanner />
       </body>
     </html>

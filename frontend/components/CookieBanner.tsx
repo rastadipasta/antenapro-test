@@ -15,11 +15,13 @@ export default function CookieBanner() {
 
   const acceptAll = () => {
     localStorage.setItem("antenapro-cookie-consent", "all");
+    window.dispatchEvent(new Event("consentUpdated"));
     setShow(false);
   };
 
   const acceptNecessary = () => {
     localStorage.setItem("antenapro-cookie-consent", "necessary");
+    window.dispatchEvent(new Event("consentUpdated"));
     setShow(false);
   };
 
