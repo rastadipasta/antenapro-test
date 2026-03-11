@@ -108,6 +108,11 @@ const IconArrowRight = () => (
     <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
   </svg>
 );
+const IconSpinner = () => (
+  <svg className="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+  </svg>
+);
 
 const PROJECT_PHOTOS = [
   { src: "/projects/1.JPG", alt: "Završeni projekt montaže antene 1" },
@@ -141,7 +146,34 @@ const PROJECT_PHOTOS = [
   { src: "/projects/29.JPG", alt: "Završeni projekt montaže antene 29" },
 ];
 
+const AnimatedCounter = ({ end, suffix = "" }: { end: number, suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        let start = 0;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCount(end);
+            clearInterval(timer);
+          } else {
+            setCount(Math.ceil(start));
+          }
+        }, 16);
+        observer.disconnect();
+      }
+    });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end]);
+
+  return <div ref={ref} className="stat-num">{count}{suffix}</div>;
+};
 
 export default function Home() {
   const [dark, setDark] = useState(false);
@@ -408,10 +440,14 @@ export default function Home() {
           </ul>
           <div className="nav-right">
             <button className="theme-btn" onClick={toggleTheme} aria-label="Promijeni temu">
-              {mounted && dark ? <IconSun /> : <IconMoon />}
+              <div style={{ transition: "transform 0.5s ease", transform: dark ? "rotate(360deg)" : "rotate(0)" }}>
+                {mounted && dark ? <IconSun /> : <IconMoon />}
+              </div>
             </button>
             <button className="hamburger" onClick={() => setMenuOpen((m) => !m)} aria-label="Izbornik">
-              {menuOpen ? <IconX /> : <IconMenu />}
+              <div style={{ transition: "transform 0.3s ease", transform: menuOpen ? "rotate(90deg)" : "rotate(0)" }}>
+                {menuOpen ? <IconX /> : <IconMenu />}
+              </div>
             </button>
           </div>
         </div>
@@ -447,15 +483,15 @@ export default function Home() {
             </div>
             <div className="hero-stats reveal reveal-delay-3">
               <div className="stat-item">
-                <div className="stat-num">20+</div>
+                <AnimatedCounter end={20} suffix="+" />
                 <div className="stat-label">Godina iskustva</div>
               </div>
               <div className="stat-item">
-                <div className="stat-num">2000+</div>
+                <AnimatedCounter end={2000} suffix="+" />
                 <div className="stat-label">Zadovoljnih klijenata</div>
               </div>
               <div className="stat-item">
-                <div className="stat-num">24h</div>
+                <AnimatedCounter end={24} suffix="h" />
                 <div className="stat-label">Brzi odaziv</div>
               </div>
             </div>
@@ -733,7 +769,7 @@ export default function Home() {
               <div className="contact-form-card reveal reveal-delay-1">
                 {formSuccess ? (
                   <div className="form-success">
-                    <div className="success-icon">
+                    <div className="success-icon success-icon-animated">
                       <IconCheck />
                     </div>
                     <h4>Uspješno poslano!</h4>
@@ -774,7 +810,7 @@ export default function Home() {
                         <ClientRecaptcha recaptchaRef={recaptchaRef} />
                       </div>
                       <button type="submit" className="form-submit" disabled={sending}>
-                        {sending ? "Slanje..." : <><IconSend /> Pošalji poruku</>}
+                        {sending ? <><IconSpinner /> Slanje...</> : <><IconSend /> Pošalji poruku</>}
                       </button>
                       {result && result.type === "error" && (
                         <div className="form-msg error">{result.msg}</div>
