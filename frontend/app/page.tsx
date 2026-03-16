@@ -546,42 +546,42 @@ export default function Home() {
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Montaža i podešavanje TV i satelitskih antena</strong><br/>
+                    <strong>Montaža i podešavanje TV i satelitskih antena</strong><br />
                     Obuhvaća izbor optimalnog mjesta, montažu nosača, usmjeravanje antene i mjerenje snage signala (DVB-T2). Nakon montaže vršimo finalno podešavanje kako bi prijem bio stabilan i bez smetnji — obično odmah vidljivo u prvih nekoliko minuta testiranja.
                   </div>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Montaža i konfiguracija Starlink sustava</strong><br/>
+                    <strong>Montaža i konfiguracija Starlink sustava</strong><br />
                     Instaliramo i konfiguriramo Starlink terminale (suglasno modelu) s pravilnim pozicioniranjem i zaštitom kabela. U većini instalacija optimiziramo položaj kako bi uređaj imao liniju vidljivosti i minimalne prijelaze signala – rezultat je stabilna veza i brzine koje odgovaraju vašim potrebama.
                   </div>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Instalacija optičkog interneta i Wi-Fi mreža</strong><br/>
+                    <strong>Instalacija optičkog interneta i Wi-Fi mreža</strong><br />
                     Radimo FTTH/GPON priključke, urednu distribuciju kabela, te projektiramo Wi-Fi mreže prema prostoru — uključujući mjerenje signala, postavljanje pristupnih točaka i optimizaciju pokrivenosti. Cilj je pokriti cijeli prostor bez mrtvih zona i osigurati stabilno vrijeme rada mreže.
                   </div>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Ugradnja videonadzora i alarmnih sustava</strong><br/>
+                    <strong>Ugradnja videonadzora i alarmnih sustava</strong><br />
                     Projektiramo sustave videonadzora prema zahtjevu: izbor kamera, raspored kadrova, pohrana snimljenog materijala i povezivanje s mrežnim sustavima. Dajemo preporuke za kamere i konfiguraciju tako da sustav pruži jasan doživljaj i potrebno pokrivanje prostora.
                   </div>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Montaža televizora i multimedijskih sustava</strong><br/>
+                    <strong>Montaža televizora i multimedijskih sustava</strong><br />
                     Postavljamo TV-e na zidne nosače, skrivamo kabele, spajamo audio/video opremu i kalibriramo sustav za optimalan efekt slike i zvuka. Nudimo rješenja za jednostavne postavke pa do kompleksnih multimedijskih sustava za poslovne prostore.
                   </div>
                 </li>
                 <li style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                   <span style={{ color: "var(--accent)", marginTop: "4px", flexShrink: 0 }}><IconCheck /></span>
                   <div>
-                    <strong>Servis antena i tehničko održavanje</strong><br/>
+                    <strong>Servis antena i tehničko održavanje</strong><br />
                     Pružamo brzi servis antena, popravke i redovno održavanje sustava kako bi emisija signala ostala u optimalnom stanju. Nudimo planove održavanja i hitne intervencije — na raspolaganju za provjere i optimizacije u realnom vremenu.
                   </div>
                 </li>
@@ -622,15 +622,15 @@ export default function Home() {
               <div style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem" }}>
                 <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "1rem", color: "var(--text)" }}>Česta pitanja (kratko)</h3>
                 <div style={{ marginBottom: "1rem" }}>
-                  <strong>Je li procjena besplatna?</strong><br/>
+                  <strong>Je li procjena besplatna?</strong><br />
                   U većini slučajeva nudimo besplatnu inicijalnu procjenu.
                 </div>
                 <div style={{ marginBottom: "1rem" }}>
-                  <strong>Koliko traje montaža?</strong><br/>
+                  <strong>Koliko traje montaža?</strong><br />
                   Jednostavne montaže obično su gotove isti dan, kompleksniji sustavi ili cijeli projekti mogu zahtijevati 1 ili više radnih dana, ovisno o opsegu.
                 </div>
                 <div>
-                  <strong>Što uključuje garancija?</strong><br/>
+                  <strong>Što uključuje garancija?</strong><br />
                   Garancija obuhvaća radove i instalirane komponente prema uvjetima proizvođača.
                 </div>
               </div>
