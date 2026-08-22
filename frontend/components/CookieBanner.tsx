@@ -1,28 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
 
-export default function CookieBanner() {
-  const [show, setShow] = useState(false);
+const subscribeConsent = (callback: () => void) => {
+  window.addEventListener("consentUpdated", callback);
+  window.addEventListener("storage", callback);
+  return () => { window.removeEventListener("consentUpdated", callback); window.removeEventListener("storage", callback); };
+};
+const getConsentSnapshot = () => localStorage.getItem("antenapro-cookie-consent") === null;
 
-  useEffect(() => {
-    const consent = localStorage.getItem("antenapro-cookie-consent");
-    if (!consent) {
-      setShow(true);
-    }
-  }, []);
+export default function CookieBanner() {
+  const show = useSyncExternalStore(subscribeConsent, getConsentSnapshot, () => false);
 
   const acceptAll = () => {
     localStorage.setItem("antenapro-cookie-consent", "all");
     window.dispatchEvent(new Event("consentUpdated"));
-    setShow(false);
   };
 
   const acceptNecessary = () => {
     localStorage.setItem("antenapro-cookie-consent", "necessary");
     window.dispatchEvent(new Event("consentUpdated"));
-    setShow(false);
   };
 
   if (!show) return null;
