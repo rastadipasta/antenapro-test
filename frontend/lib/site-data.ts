@@ -87,7 +87,7 @@ export const services: Service[] = [
     eyebrow: "Čist zid. Savršena slika.",
     description: "Sigurna zidna montaža TV-a, skriveni kabeli i povezivanje multimedijske opreme.",
     intro: "Televizor postavljamo na optimalnu visinu, odabiremo odgovarajući nosač i ostavljamo uredan prostor bez vidljivih kabela.",
-    image: "/projects/13.JPG",
+    image: "/images/tv-zid-hero.png",
     icon: "TV",
     benefits: ["Fiksni, nagibni i zglobni nosači", "Skrivanje i organizacija kabela", "Spajanje audio i video opreme"],
     steps: [
@@ -158,6 +158,7 @@ export const contact = {
   phoneHref: "tel:+385993330036",
   email: "info@antenapro.hr",
   address: "Banatska ulica 38, Zagreb",
+  oib: "77718126467",
 };
 
 export const siteMetrics: readonly SiteMetric[] = [

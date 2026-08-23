@@ -26,7 +26,7 @@ export default function SiteFooter() {
           <h2>Kontakt</h2>
           <a href={contact.phoneHref}>{contact.phoneLabel}</a>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          <p>{contact.address}</p>
+          <p>{contact.address}<br />OIB: {contact.oib}</p>
         </div>
       </div>
       <div className="footer-bottom shell">
