@@ -396,6 +396,7 @@ em { color: var(--blue-bright); font-style: normal; }
   --curtain-angle: 24deg;
   /* tan(24deg) / 2 keeps the moving edge at a true 24° across the viewport. */
   --curtain-slant: 22.26vh;
+  --curtain-depth: 44.52vh;
   z-index: 5000;
   color: #f5f8fb;
   pointer-events: auto;
@@ -470,23 +471,15 @@ em { color: var(--blue-bright); font-style: normal; }
   height: auto;
 }
 
-.route-curtain.is-covering {
-  clip-path: polygon(0 0, 0 0, 0 22%, 0 50%, 0 78%, 0 100%, 0 100%);
-  animation: curtain-clip-cover .65s cubic-bezier(.76, 0, .24, 1) forwards;
+.route-curtain.is-transitioning {
+  clip-path: polygon(0 0, 0 0, calc(0px - var(--curtain-depth)) 100%, 0 100%);
+  animation: curtain-clip-cycle 1.3s linear forwards;
 }
 
-.route-curtain.is-covering .transition-curtain__content {
-  animation: curtain-title-in .55s cubic-bezier(.2, .75, .2, 1) both;
+.route-curtain.is-transitioning .transition-curtain__content {
+  animation: curtain-title-cycle 1.3s linear both;
 }
 
-.route-curtain.is-covered { clip-path: inset(0); }
-
-.route-curtain.is-revealing {
-  clip-path: inset(0);
-  animation: curtain-clip-reveal .65s cubic-bezier(.76, 0, .24, 1) forwards;
-}
-
-.route-curtain.is-revealing .transition-curtain__content,
 .route-curtain.is-pop-reveal .transition-curtain__content {
   animation: curtain-title-out .52s cubic-bezier(.55, 0, 1, .45) both;
 }
@@ -505,10 +498,11 @@ em { color: var(--blue-bright); font-style: normal; }
   animation: curtain-clip-reveal .65s cubic-bezier(.76, 0, .24, 1) forwards;
 }
 
-@keyframes curtain-clip-cover {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-  58% { clip-path: polygon(0 0, calc(50% + var(--curtain-slant)) 0, calc(50% - var(--curtain-slant)) 100%, 0 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+@keyframes curtain-clip-cycle {
+  0% { clip-path: polygon(0 0, 0 0, calc(0px - var(--curtain-depth)) 100%, 0 100%); }
+  49.999% { clip-path: polygon(0 0, calc(100% + var(--curtain-depth)) 0, 100% 100%, 0 100%); }
+  50.001% { clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0px - var(--curtain-depth)) 100%); }
+  100% { clip-path: polygon(calc(100% + var(--curtain-depth)) 0, 100% 0, 100% 100%, 100% 100%); }
 }
 
 @keyframes curtain-clip-reveal {
@@ -523,9 +517,10 @@ em { color: var(--blue-bright); font-style: normal; }
   100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); visibility: hidden; }
 }
 
-@keyframes curtain-title-in {
+@keyframes curtain-title-cycle {
   0% { opacity: 0; transform: translateX(-28px); filter: blur(8px); }
-  100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+  28%, 68% { opacity: 1; transform: translateX(0); filter: blur(0); }
+  100% { opacity: 0; transform: translateX(34px); filter: blur(6px); }
 }
 
 @keyframes curtain-title-out {
@@ -836,9 +831,8 @@ html:not([data-intro-seen="true"]) .home-hero .hero-copy > *:nth-child(4) { anim
   .transition-content.is-entering { animation: reduced-content-fade .13s linear both !important; }
   html:not([data-intro-seen="true"]) .home-hero .hero-copy > * { animation: none !important; }
   .route-curtain.is-intro,
-  .route-curtain.is-revealing,
   .route-curtain.is-pop-reveal { animation: reduced-fade .13s linear both !important; clip-path: none !important; }
-  .route-curtain.is-covering { animation: reduced-cover .13s linear both !important; clip-path: none !important; }
+  .route-curtain.is-transitioning { animation: reduced-cycle .13s linear both !important; clip-path: none !important; }
   .route-curtain .transition-curtain__content { animation: none !important; filter: none !important; transform: none !important; }
   .motion-ready [data-reveal],
   .motion-ready [data-reveal-group] > *,
@@ -854,4 +848,5 @@ html:not([data-intro-seen="true"]) .home-hero .hero-copy > *:nth-child(4) { anim
 
 @keyframes reduced-fade { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
 @keyframes reduced-cover { from { opacity: 0; } to { opacity: 1; } }
+@keyframes reduced-cycle { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
 @keyframes reduced-content-fade { from { opacity: 0; } to { opacity: 1; } }

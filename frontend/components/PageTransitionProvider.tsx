@@ -7,12 +7,13 @@ import { PAGE_SETTLED_EVENT } from "./ScrollMotionProvider";
 import TransitionCurtain from "./TransitionCurtain";
 
 const INTRO_DURATION = 2200;
-const COVER_DURATION = 650;
+const TRANSITION_DURATION = 1300;
+const ROUTE_SWAP_DELAY = TRANSITION_DURATION / 2;
 const REVEAL_DURATION = 650;
 const REDUCED_DURATION = 130;
 const NAVIGATION_TIMEOUT = 5000;
 
-type TransitionPhase = "intro" | "idle" | "covering" | "covered" | "revealing" | "pop-reveal";
+type TransitionPhase = "intro" | "idle" | "transitioning" | "pop-reveal";
 type PendingNavigation = { destination: string; pathname: string };
 
 const ROUTE_TITLES: Record<string, string> = {
@@ -45,6 +46,7 @@ export default function PageTransitionProvider({ children }: { children: ReactNo
   const pathname = usePathname();
   const [phase, setPhase] = useState<TransitionPhase>("intro");
   const [transitionTitle, setTransitionTitle] = useState(() => getRouteTitle(pathname));
+  const [contentEntering, setContentEntering] = useState(false);
   const phaseRef = useRef<TransitionPhase>("intro");
   const pendingRef = useRef<PendingNavigation | null>(null);
   const previousOverflowRef = useRef("");
@@ -87,6 +89,7 @@ export default function PageTransitionProvider({ children }: { children: ReactNo
 
   const finishTransition = (shouldFocus = false) => {
     pendingRef.current = null;
+    setContentEntering(false);
     updatePhase("idle");
     unlockScroll();
     if (shouldFocus) focusPage();
@@ -150,20 +153,25 @@ export default function PageTransitionProvider({ children }: { children: ReactNo
       };
       const startedNavigation = pendingRef.current;
       setTransitionTitle(getRouteTitle(url.pathname));
+      setContentEntering(false);
       lockScroll();
-      updatePhase("covering");
+      updatePhase("transitioning");
 
-      const coverDuration = reducedMotionRef.current ? REDUCED_DURATION : COVER_DURATION;
+      const swapDelay = reducedMotionRef.current ? REDUCED_DURATION / 2 : ROUTE_SWAP_DELAY;
+      const transitionDuration = reducedMotionRef.current ? REDUCED_DURATION : TRANSITION_DURATION;
       schedule(() => {
         const pending = pendingRef.current;
         if (!pending || pending !== startedNavigation) return;
-        updatePhase("covered");
         try {
           router.push(pending.destination, { scroll: true });
         } catch {
           finishTransition();
         }
-      }, coverDuration);
+      }, swapDelay);
+
+      schedule(() => {
+        if (pendingRef.current === startedNavigation) finishTransition(true);
+      }, transitionDuration);
 
       schedule(() => {
         if (pendingRef.current === startedNavigation) finishTransition();
@@ -178,13 +186,7 @@ export default function PageTransitionProvider({ children }: { children: ReactNo
   useEffect(() => {
     const pending = pendingRef.current;
     if (!pending || pending.pathname !== pathname) return;
-
-    const duration = reducedMotionRef.current ? REDUCED_DURATION : REVEAL_DURATION;
-    window.requestAnimationFrame(() => {
-      updatePhase("revealing");
-      schedule(() => finishTransition(true), duration);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    window.requestAnimationFrame(() => setContentEntering(true));
   }, [pathname]);
 
   useEffect(() => {
@@ -204,7 +206,7 @@ export default function PageTransitionProvider({ children }: { children: ReactNo
 
   return (
     <>
-      <div className={`transition-content ${phase === "revealing" ? "is-entering" : ""}`}>
+      <div className={`transition-content ${contentEntering ? "is-entering" : ""}`}>
         {children}
       </div>
       <div className={`route-curtain is-${phase}`} aria-hidden="true">
