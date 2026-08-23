@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import RotatingHeroTitle from "@/components/RotatingHeroTitle";
 import StatsCounters from "@/components/StatsCounters";
 import { contact, projects, services, siteMetrics } from "@/lib/site-data";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
+const heroPrompts = ["antenu?", "videonadzor?", "Starlink?", "bolji Wi-Fi?", "TV na zid?"] as const;
 
 export default function Home() {
   const jsonLd = { "@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", name: "AntenaPRO", url: "https://antenapro.hr", telephone: "+385993330036", email: contact.email, address: { "@type": "PostalAddress", streetAddress: "Banatska ulica 38", addressLocality: "Zagreb", addressCountry: "HR" }, areaServed: "Hrvatska" };
@@ -16,7 +18,7 @@ export default function Home() {
         <div className="signal-rings" aria-hidden="true"><i /><i /><i /></div>
         <div className="shell hero-copy">
           <p className="eyebrow"><span /> Zagreb i šire · Odaziv unutar 24 h</p>
-          <h1>Trebate<br /><em>antenu?</em></h1>
+          <RotatingHeroTitle items={heroPrompts} />
           <p className="hero-lead">Antene, Starlink, Wi-Fi, videonadzor i multimedija — od stručne procjene do uredne instalacije koja radi kako treba.</p>
           <div className="hero-actions"><Link className="button button-primary" href="/kontakt">Zatraži procjenu <Arrow /></Link><a className="button button-ghost" href={contact.phoneHref}><span className="live-dot" /> {contact.phoneLabel}</a></div>
         </div>
