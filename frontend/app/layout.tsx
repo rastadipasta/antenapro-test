@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource/metropolis/400.css";
 import "@fontsource/metropolis/700.css";
 import "@fontsource/metropolis/800.css";
-import "charter-webfont/charter.css";
 import "./globals.css";
 import CookieBanner from "../components/CookieBanner";
 import GoogleAnalytics from "../components/GoogleAnalytics";
