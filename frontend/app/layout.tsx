@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   description: "Profesionalna montaža antena, Starlinka, Wi-Fi mreža, videonadzora i multimedije. 20+ godina iskustva i odaziv unutar 24 sata.",
   keywords: ["montaža antena", "Starlink montaža", "videonadzor", "Wi-Fi mreže", "Zagreb", "AntenaPRO"],
   alternates: { canonical: "/" },
-  openGraph: { title: "AntenaPRO – Pouzdan signal. Stručna izvedba.", description: "Tehnička rješenja za stabilan signal, povezivost i sigurnost.", type: "website", locale: "hr_HR", siteName: "AntenaPRO", images: [{ url: "/images/IMG_8108.JPG", width: 1200, height: 630, alt: "AntenaPRO antenski sustav u Zagrebu" }] },
+  openGraph: { title: "AntenaPRO – Pouzdan signal. Stručna izvedba.", description: "Tehnička rješenja za stabilan signal, povezivost i sigurnost.", type: "website", locale: "hr_HR", siteName: "AntenaPRO", images: [{ url: "https://antenapro-test.vercel.app/images/og-antenapro.png", width: 1200, height: 630, alt: "AntenaPRO – pouzdan signal i stručna izvedba" }] },
+  twitter: { card: "summary_large_image", title: "AntenaPRO – Pouzdan signal. Stručna izvedba.", description: "Tehnička rješenja za stabilan signal, povezivost i sigurnost.", images: ["https://antenapro-test.vercel.app/images/og-antenapro.png"] },
   robots: { index: true, follow: true },
 };
 
