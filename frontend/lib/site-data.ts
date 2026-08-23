@@ -12,6 +12,13 @@ export type Service = {
   faq: { question: string; answer: string }[];
 };
 
+export type SiteMetric = {
+  value: number;
+  suffix?: string;
+  label: string;
+  decimals?: number;
+};
+
 export const services: Service[] = [
   {
     slug: "montaza-antena",
@@ -152,6 +159,17 @@ export const contact = {
   email: "info@antenapro.hr",
   address: "Banatska ulica 38, Zagreb",
 };
+
+export const siteMetrics: readonly SiteMetric[] = [
+  { value: 20, suffix: "+", label: "godina iskustva" },
+  { value: 2000, suffix: "+", label: "zadovoljnih klijenata" },
+  { value: 24, suffix: " h", label: "brzi odaziv" },
+  { value: 2, label: "ovlaštena partnera" },
+];
+
+export const aboutSiteMetrics: readonly SiteMetric[] = siteMetrics.map((metric, index) =>
+  index === 2 ? { ...metric, label: "tipičan odaziv" } : metric,
+);
 
 export const PRIMARY_ROUTES = [
   "/",

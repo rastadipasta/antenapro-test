@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { contact, projects, services } from "@/lib/site-data";
+import StatsCounters from "@/components/StatsCounters";
+import { contact, projects, services, siteMetrics } from "@/lib/site-data";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -19,9 +20,9 @@ export default function Home() {
           <p className="hero-lead">Antene, Starlink, Wi-Fi, videonadzor i multimedija — od stručne procjene do uredne instalacije koja radi kako treba.</p>
           <div className="hero-actions"><Link className="button button-primary" href="/kontakt">Zatraži procjenu <Arrow /></Link><a className="button button-ghost" href={contact.phoneHref}><span className="live-dot" /> {contact.phoneLabel}</a></div>
         </div>
-        <div className="hero-proof shell">
-          <div><strong>20+</strong><span>godina iskustva</span></div><div><strong>2000+</strong><span>zadovoljnih klijenata</span></div><div><strong>24 h</strong><span>brzi odaziv</span></div><div className="partner-proof"><span>Ovlašteni partner</span><strong>A1 · Telemach</strong></div>
-        </div>
+        <StatsCounters className="hero-proof shell" metrics={siteMetrics.slice(0, 3)} variant="compact">
+          <div className="partner-proof"><span>Ovlašteni partner</span><strong>A1 · Telemach</strong></div>
+        </StatsCounters>
       </section>
 
       <section className="section services-home"><div className="shell">
