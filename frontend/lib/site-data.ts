@@ -40,7 +40,7 @@ export const services: Service[] = [
     eyebrow: "Povezanost u svakom prostoru",
     description: "Profesionalna instalacija Starlinka, optike, 5G opreme i Wi-Fi mreža bez mrtvih zona.",
     intro: "Projektiramo stabilnu mrežu prema objektu, broju korisnika i načinu korištenja — od obiteljske kuće do poslovnog prostora.",
-    image: "/projects/19.JPG",
+    image: "/images/internet-usluge-hero.png",
     icon: "NET",
     benefits: ["Optimalna Starlink pozicija i zaštita kabela", "Wi-Fi pokrivenost bez mrtvih zona", "Uredna mrežna i optička instalacija"],
     steps: [
@@ -60,7 +60,7 @@ export const services: Service[] = [
     eyebrow: "Pregled i sigurnost 24/7",
     description: "Projektiranje i ugradnja kamera, snimača i alarma s pouzdanim udaljenim pristupom.",
     intro: "Sustav prilagođavamo kritičnim točkama objekta, uvjetima osvjetljenja i potrebnom vremenu čuvanja snimki.",
-    image: "/projects/23.JPG",
+    image: "/images/videonadzor-usluge-hero.png",
     icon: "SEC",
     benefits: ["Jasni kadrovi ključnih zona", "Sigurna pohrana i udaljeni pregled", "Diskretna, uredna instalacija"],
     steps: [

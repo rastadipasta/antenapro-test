@@ -393,12 +393,17 @@ em { color: var(--blue-bright); font-style: normal; }
 }
 
 .route-curtain {
+  --curtain-angle: 24deg;
+  /* tan(24deg) / 2 keeps the moving edge at a true 24° across the viewport. */
+  --curtain-slant: 22.26vh;
   z-index: 5000;
   color: #f5f8fb;
   pointer-events: auto;
   background: #03101d;
   will-change: clip-path, opacity;
 }
+
+.route-curtain:not(.is-intro) { background: #1b1b1b; }
 
 .route-curtain.is-idle {
   visibility: hidden;
@@ -413,31 +418,7 @@ em { color: var(--blue-bright); font-style: normal; }
   place-items: center;
   overflow: hidden;
   isolation: isolate;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(21, 130, 232, .18), transparent 31%),
-    linear-gradient(120deg, #02080f 0%, #071a2c 52%, #03101d 100%);
-}
-
-.transition-curtain::after {
-  content: "";
-  position: absolute;
-  width: min(52vw, 720px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(35, 145, 245, .17);
-  border-radius: 50%;
-  box-shadow: 0 0 0 72px rgba(35, 145, 245, .035), 0 0 0 144px rgba(35, 145, 245, .025);
-}
-
-.transition-curtain__grid {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: .2;
-  background-image:
-    linear-gradient(rgba(50, 151, 240, .11) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(50, 151, 240, .11) 1px, transparent 1px);
-  background-size: 84px 84px;
-  mask-image: radial-gradient(circle at center, black, transparent 68%);
+  background: #1b1b1b;
 }
 
 .transition-curtain__content {
@@ -525,21 +506,21 @@ em { color: var(--blue-bright); font-style: normal; }
 }
 
 @keyframes curtain-clip-cover {
-  0% { clip-path: polygon(0 0, 0 0, 0 22%, 0 50%, 0 78%, 0 100%, 0 100%); }
-  58% { clip-path: polygon(0 0, 53% 0, 60% 22%, 64% 50%, 60% 78%, 53% 100%, 0 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 22%, 100% 50%, 100% 78%, 100% 100%, 0 100%); }
+  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  58% { clip-path: polygon(0 0, calc(50% + var(--curtain-slant)) 0, calc(50% - var(--curtain-slant)) 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
 
 @keyframes curtain-clip-reveal {
-  0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 78%, 0 50%, 0 22%); }
-  58% { clip-path: polygon(53% 0, 100% 0, 100% 100%, 53% 100%, 60% 78%, 64% 50%, 60% 22%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 78%, 100% 50%, 100% 22%); }
+  0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  58% { clip-path: polygon(calc(50% + var(--curtain-slant)) 0, 100% 0, 100% 100%, calc(50% - var(--curtain-slant)) 100%); }
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
 }
 
 @keyframes curtain-intro-reveal {
   0%, 58% { clip-path: inset(0); }
-  76% { clip-path: polygon(53% 0, 100% 0, 100% 100%, 53% 100%, 60% 78%, 64% 50%, 60% 22%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 78%, 100% 50%, 100% 22%); visibility: hidden; }
+  76% { clip-path: polygon(calc(50% + var(--curtain-slant)) 0, 100% 0, 100% 100%, calc(50% - var(--curtain-slant)) 100%); }
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); visibility: hidden; }
 }
 
 @keyframes curtain-title-in {
@@ -836,7 +817,6 @@ html:not([data-intro-seen="true"]) .home-hero .hero-copy > *:nth-child(4) { anim
   .btn-cookie { flex: 1; }
   .transition-curtain__content { width: min(100% - 30px, 1100px); }
   .transition-curtain__title { font-size: clamp(48px, 17vw, 78px); }
-  .transition-curtain::after { width: 86vw; }
   .motion-ready [data-reveal],
   .motion-ready [data-reveal-group] > * { transform: translate3d(0, 18px, 0); }
   .motion-ready [data-reveal="left"] { transform: translate3d(-22px, 0, 0); }

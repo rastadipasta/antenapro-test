@@ -8,7 +8,6 @@ type TransitionCurtainProps = {
 export default function TransitionCurtain({ title, showLogo = false }: TransitionCurtainProps) {
   return (
     <div className="transition-curtain">
-      <div className="transition-curtain__grid" aria-hidden="true" />
       <div className="transition-curtain__content">
         <span className="transition-curtain__kicker">
           <i aria-hidden="true" /> AntenaPRO
