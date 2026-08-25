@@ -778,6 +778,14 @@ html:not([data-intro-seen="true"]) .home-hero .hero-copy > *:nth-child(4) { anim
   .footer-grid > div:last-child { grid-column: 2 / 4; }
 }
 
+@media (min-width: 641px) and (max-width: 900px) and (orientation: portrait) {
+  .inner-hero { min-height: 900px; height: 100svh; max-height: none; align-items: flex-start; padding: 210px 0 88px; }
+  .inner-hero-content { width: min(100% - 32px, 1200px); }
+  .inner-hero h1 { max-width: 720px; font-size: clamp(60px, 9vw, 76px); overflow-wrap: break-word; }
+  .inner-hero-content > p:not(.eyebrow) { max-width: 590px; font-size: 17px; margin: 26px 0 32px; }
+  .inner-hero .hero-actions { max-width: 520px; }
+}
+
 @media (max-width: 640px) {
   .site-header { padding: 16px 12px 0; }
   .pill-nav { height: 58px; }
