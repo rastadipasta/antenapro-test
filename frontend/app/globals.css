@@ -213,7 +213,7 @@ em { color: var(--blue-bright); font-style: normal; }
 .cta-rings i { border-color: rgba(255,255,255,.35); }
 
 /* Inner pages */
-.inner-hero { position: relative; overflow: hidden; min-height: 690px; padding: 180px 0 100px; background: var(--navy); color: white; display: flex; align-items: center; }
+.inner-hero { position: relative; overflow: hidden; min-height: 880px; height: 100svh; max-height: 1050px; padding: 100px 0; background: var(--navy); color: white; display: flex; align-items: center; }
 .inner-hero-media { position: absolute; inset: 0; }
 .inner-hero-media img { object-fit: cover; }
 .inner-hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,8,15,.96), rgba(3,12,22,.72) 58%, rgba(3,12,22,.35)); }
@@ -226,7 +226,7 @@ em { color: var(--blue-bright); font-style: normal; }
 .inner-hero-content { position: relative; z-index: 2; }
 .inner-hero h1 { max-width: 900px; font-size: clamp(52px,7vw,94px); line-height: .96; }
 .inner-hero-content > p:not(.eyebrow) { max-width: 650px; color: #b8c9d9; line-height: 1.7; font-size: 18px; margin: 26px 0 34px; }
-.editorial-hero, .contact-hero { min-height: 560px; background: radial-gradient(circle at 80% 30%, #12375e, transparent 32%), var(--navy); }
+.editorial-hero, .contact-hero { background: radial-gradient(circle at 80% 30%, #12375e, transparent 32%), var(--navy); }
 .service-detail-grid { display: grid; grid-template-columns: 1fr .75fr; gap: 100px; align-items: start; }
 .service-detail-grid h2 { font-size: clamp(42px,5vw,68px); }
 .large-copy { color: var(--muted); font-size: 18px; line-height: 1.8; margin-top: 30px; max-width: 650px; }
@@ -822,8 +822,8 @@ html:not([data-intro-seen="true"]) .home-hero .hero-copy > *:nth-child(4) { anim
   .rating-block { grid-column: auto; }
   .trust-layout blockquote { padding: 26px; }
   .final-cta { padding: 80px 0; }
-  .inner-hero { min-height: 620px; padding-top: 150px; }
-  .inner-hero h1 { font-size: clamp(48px,14vw,68px); }
+  .inner-hero { min-height: 820px; height: 100svh; max-height: none; align-items: flex-start; padding: 190px 0 64px; }
+  .inner-hero h1 { font-size: clamp(44px,13.5vw,68px); overflow-wrap: break-word; }
   .inner-hero-content > p:not(.eyebrow) { font-size: 16px; }
   .project-strip, .projects-gallery { grid-template-columns: 1fr; }
   .project-strip > div { aspect-ratio: 4/3; }
